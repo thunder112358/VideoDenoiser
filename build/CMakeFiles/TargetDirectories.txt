@@ -1,0 +1,7 @@
+/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/build/CMakeFiles/rebuild_cache.dir
+/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/build/CMakeFiles/edit_cache.dir
+/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/build/CMakeFiles/VideoDenoiser.dir
+/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/build/source/CMakeFiles/rebuild_cache.dir
+/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/build/source/CMakeFiles/edit_cache.dir
+/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/build/source/CMakeFiles/SRC_MODULE_static.dir
+/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/build/source/CMakeFiles/SRC_MODULE_dynamic.dir
