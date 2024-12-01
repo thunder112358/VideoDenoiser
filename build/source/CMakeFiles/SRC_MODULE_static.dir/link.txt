@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSRC_MODULE.a  CMakeFiles/SRC_MODULE_static.dir/Fast_klt.cpp.o CMakeFiles/SRC_MODULE_static.dir/Mesh.cpp.o CMakeFiles/SRC_MODULE_static.dir/MeshFlow.cpp.o CMakeFiles/SRC_MODULE_static.dir/MotionDenoiser.cpp.o CMakeFiles/SRC_MODULE_static.dir/VideoIO.cpp.o
+/usr/bin/ranlib libSRC_MODULE.a
