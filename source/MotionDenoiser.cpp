@@ -119,7 +119,7 @@ void MotionDenoiser::MotionEstimation(){
 		}
 		else
 		{
-			myDenseOF(m_frames[i - 1], m_frames[i], map_X[i - 1], map_Y[i - 1]);
+			myDenseOF(m_frames[i - 1], m_frames[i], map_X[i - 1], map_Y[i - 1], DENSE_RLOF);
 		}
 		Get_optical_flow_img(map_X[i - 1], map_Y[i - 1], optical_flow_img[0][i - 1], optical_flow_img[1][i - 1]);
 		//cout << "Get_optical_flow_img Done" << endl;
@@ -255,7 +255,7 @@ void MotionDenoiser::SaveResult(string name, vector<string> of_name) {
     std::string dir = name.substr(0, name.find_last_of("/\\"));
     std::system(("mkdir -p " + dir).c_str());
 
-    // Open output file in binary mode
+    // Save main denoised video in YUV format
     std::ofstream outFile(name, std::ios::binary);
     if (!outFile.is_open()) {
         throw runtime_error("Cannot open output file: " + name);
@@ -264,27 +264,38 @@ void MotionDenoiser::SaveResult(string name, vector<string> of_name) {
     // For each frame
     for (int i = 0; i < m_frameNum; i++) {
         Mat yuv;
-        // Convert BGR to YUV420
         cvtColor(dst[i], yuv, COLOR_BGR2YUV_I420);
-        
-        // Write YUV data
         outFile.write(reinterpret_cast<char*>(yuv.data), yuv.total() * yuv.elemSize());
     }
     outFile.close();
 
-    // Save optical flow visualizations
+    // Save optical flow visualizations in YUV format
     if (COLOR) {
-        for (int i = 0; i < optical_flow_img[0].size(); i++) {
-            std::string colorFileName = of_name[0] + std::to_string(i) + ".png";
-            cv::imwrite(colorFileName, optical_flow_img[0][i]);
+        std::ofstream colorFile(of_name[0] + ".yuv", std::ios::binary);
+        if (!colorFile.is_open()) {
+            throw runtime_error("Cannot open color flow output file: " + of_name[0]);
         }
+
+        for (int i = 0; i < optical_flow_img[0].size(); i++) {
+            Mat yuv;
+            cvtColor(optical_flow_img[0][i], yuv, COLOR_BGR2YUV_I420);
+            colorFile.write(reinterpret_cast<char*>(yuv.data), yuv.total() * yuv.elemSize());
+        }
+        colorFile.close();
     }
 
     if (ARROW) {
-        for (int i = 0; i < optical_flow_img[1].size(); i++) {
-            std::string arrowFileName = of_name[1] + std::to_string(i) + ".png";
-            cv::imwrite(arrowFileName, optical_flow_img[1][i]);
+        std::ofstream arrowFile(of_name[1] + ".yuv", std::ios::binary);
+        if (!arrowFile.is_open()) {
+            throw runtime_error("Cannot open arrow flow output file: " + of_name[1]);
         }
+
+        for (int i = 0; i < optical_flow_img[1].size(); i++) {
+            Mat yuv;
+            cvtColor(optical_flow_img[1][i], yuv, COLOR_BGR2YUV_I420);
+            arrowFile.write(reinterpret_cast<char*>(yuv.data), yuv.total() * yuv.elemSize());
+        }
+        arrowFile.close();
     }
 }
 

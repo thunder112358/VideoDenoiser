@@ -54,11 +54,11 @@ float energy_optic_flow(
 	float energy = 0.;
 	const int   size = nx * ny;
 	size_t sf = sizeof(float);
-	float *I1w    = xmalloc(size*sf);
-	float *u1x    = xmalloc(size*sf);
-	float *u1y    = xmalloc(size*sf);
-	float *u2x    = xmalloc(size*sf);
-	float *u2y    = xmalloc(size*sf);
+	float *I1w = (float *)xmalloc(size * sf);
+	float *u1x = (float *)xmalloc(size * sf);
+	float *u1y = (float *)xmalloc(size * sf);
+	float *u2x = (float *)xmalloc(size * sf);
+	float *u2y = (float *)xmalloc(size * sf);
 
 	bicubic_interpolation_warp(I1,  u1, u2, I1w,  nx, ny, true);
 
@@ -109,26 +109,26 @@ void Dual_TVL1_optic_flow(
 	const float l_t = lambda * theta;
 
 	size_t sf = sizeof(float);
-	float *I1x    = malloc(size*sf);
-	float *I1y    = xmalloc(size*sf);
-	float *I1w    = xmalloc(size*sf);
-	float *I1wx   = xmalloc(size*sf);
-	float *I1wy   = xmalloc(size*sf);
-	float *rho_c  = xmalloc(size*sf);
-	float *v1     = xmalloc(size*sf);
-	float *v2     = xmalloc(size*sf);
-	float *p11    = xmalloc(size*sf);
-	float *p12    = xmalloc(size*sf);
-	float *p21    = xmalloc(size*sf);
-	float *p22    = xmalloc(size*sf);
-	float *div    = xmalloc(size*sf);
-	float *grad   = xmalloc(size*sf);
-	float *div_p1 = xmalloc(size*sf);
-	float *div_p2 = xmalloc(size*sf);
-	float *u1x    = xmalloc(size*sf);
-	float *u1y    = xmalloc(size*sf);
-	float *u2x    = xmalloc(size*sf);
-	float *u2y    = xmalloc(size*sf);
+	float *I1x = (float *)malloc(size * sf);
+	float *I1y = (float *)xmalloc(size * sf);
+	float *I1w = (float *)xmalloc(size * sf);
+	float *I1wx = (float *)xmalloc(size * sf);
+	float *I1wy = (float *)xmalloc(size * sf);
+	float *rho_c = (float *)xmalloc(size * sf);
+	float *v1 = (float *)xmalloc(size * sf);
+	float *v2 = (float *)xmalloc(size * sf);
+	float *p11 = (float *)xmalloc(size * sf);
+	float *p12 = (float *)xmalloc(size * sf);
+	float *p21 = (float *)xmalloc(size * sf);
+	float *p22 = (float *)xmalloc(size * sf);
+	float *div = (float *)xmalloc(size * sf);
+	float *grad = (float *)xmalloc(size * sf);
+	float *div_p1 = (float *)xmalloc(size * sf);
+	float *div_p2 = (float *)xmalloc(size * sf);
+	float *u1x = (float *)xmalloc(size * sf);
+	float *u1y = (float *)xmalloc(size * sf);
+	float *u2x = (float *)xmalloc(size * sf);
+	float *u2y = (float *)xmalloc(size * sf);
 
 	centered_gradient(I1, I1x, I1y, nx, ny);
 
@@ -363,15 +363,15 @@ void Dual_TVL1_optic_flow_multiscale(
 	int size = nxx * nyy;
 
 	// allocate memory for the pyramid structure
-	float **I0s = xmalloc(nscales * sizeof(float*));
-	float **I1s = xmalloc(nscales * sizeof(float*));
-	float **u1s = xmalloc(nscales * sizeof(float*));
-	float **u2s = xmalloc(nscales * sizeof(float*));
-	int    *nx  = xmalloc(nscales * sizeof(int));
-	int    *ny  = xmalloc(nscales * sizeof(int));
+	float **I0s = (float **)xmalloc(nscales * sizeof(float *));
+	float **I1s = (float **)xmalloc(nscales * sizeof(float *));
+	float **u1s = (float **)xmalloc(nscales * sizeof(float *));
+	float **u2s = (float **)xmalloc(nscales * sizeof(float *));
+	int    *nx = (int *)xmalloc(nscales * sizeof(int));
+	int    *ny = (int *)xmalloc(nscales * sizeof(int));
 
-	I0s[0] = xmalloc(size*sizeof(float));
-	I1s[0] = xmalloc(size*sizeof(float));
+	I0s[0] = (float *)xmalloc(size * sizeof(float));
+	I1s[0] = (float *)xmalloc(size * sizeof(float));
 
 	u1s[0] = u1;
 	u2s[0] = u2;
@@ -392,10 +392,10 @@ void Dual_TVL1_optic_flow_multiscale(
 		const int sizes = nx[s] * ny[s];
 
 		// allocate memory
-		I0s[s] = xmalloc(sizes*sizeof(float));
-		I1s[s] = xmalloc(sizes*sizeof(float));
-		u1s[s] = xmalloc(sizes*sizeof(float));
-		u2s[s] = xmalloc(sizes*sizeof(float));
+		I0s[s] = (float *)xmalloc(sizes * sizeof(float));
+		I1s[s] = (float *)xmalloc(sizes * sizeof(float));
+		u1s[s] = (float *)xmalloc(sizes * sizeof(float));
+		u2s[s] = (float *)xmalloc(sizes * sizeof(float));
 
 		// zoom in the images to create the pyramidal structure
 		zoom_out(I0s[s-1], I0s[s], nx[s-1], ny[s-1], zfactor);

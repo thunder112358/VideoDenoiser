@@ -20,6 +20,14 @@ set(WITH_VTK OFF CACHE BOOL "" FORCE)
 # Add gflags package
 find_package(gflags REQUIRED)
 
+# Add TVL1 library
+add_library(tvl1flow STATIC
+    ../lib/tvl1flow/tvl1flow_lib.c
+    ../lib/tvl1flow/mask.c
+    ../lib/tvl1flow/bicubic_interpolation.c
+    ../lib/tvl1flow/zoom.c
+)
+
 # Source files
 set(SOURCES
     main.cpp
@@ -42,9 +50,9 @@ set(HEADERS
 )
 
 # Include OpenCV directories
-include_directories(${OpenCV_INCLUDE_DIRS} ${VTK_INCLUDE_DIRS})
+include_directories(${OpenCV_INCLUDE_DIRS} ${VTK_INCLUDE_DIRS} ../lib/tvl1flow)
 
 # Link OpenCV libraries
 link_directories(${OpenCV_LIB_DIR})
 add_executable(VideoDenoiser ${SOURCES} ${HEADERS})
-target_link_libraries(VideoDenoiser ${OpenCV_LIBS}   Eigen3::Eigen Iconv::Iconv ${VTK_LIBRARIES} gflags) 
+target_link_libraries(VideoDenoiser ${OpenCV_LIBS}   Eigen3::Eigen Iconv::Iconv ${VTK_LIBRARIES} gflags tvl1flow) 

@@ -122,7 +122,13 @@ CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/OpticalFlow/MeshFlow_Vide
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/opencv_contrib/modules/optflow/include/opencv2/optflow/pcaflow.hpp
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/opencv_contrib/modules/optflow/include/opencv2/optflow/rlofflow.hpp
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/opencv_contrib/modules/optflow/include/opencv2/optflow/sparse_matching_gpc.hpp
+CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c
+CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.c
+CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c
+CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/yasser/VideoDenoiser/lib/tvl1flow/xmalloc.c
+CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.c
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: ../DenseOF.cpp
+CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: ../DenseOF.h
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: ../Fast_klt.h
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: ../VideoIO.h
 
