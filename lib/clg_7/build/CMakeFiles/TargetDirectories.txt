@@ -1,0 +1,8 @@
+/home/ivan/yasser/VideoDenoiser/lib/clg_7/build/CMakeFiles/install/strip.dir
+/home/ivan/yasser/VideoDenoiser/lib/clg_7/build/CMakeFiles/install/local.dir
+/home/ivan/yasser/VideoDenoiser/lib/clg_7/build/CMakeFiles/install.dir
+/home/ivan/yasser/VideoDenoiser/lib/clg_7/build/CMakeFiles/list_install_components.dir
+/home/ivan/yasser/VideoDenoiser/lib/clg_7/build/CMakeFiles/rebuild_cache.dir
+/home/ivan/yasser/VideoDenoiser/lib/clg_7/build/CMakeFiles/edit_cache.dir
+/home/ivan/yasser/VideoDenoiser/lib/clg_7/build/CMakeFiles/../bin/test_rgb2gray.dir
+/home/ivan/yasser/VideoDenoiser/lib/clg_7/build/CMakeFiles/../bin/test_clgof.dir

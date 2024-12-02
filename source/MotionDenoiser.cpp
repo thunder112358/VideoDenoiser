@@ -10,6 +10,8 @@ using namespace cv;
 
 MotionDenoiser::MotionDenoiser(string name){
 	
+	cout << "Starting MotionDenoiser initialization..." << endl;
+	
 	std::ifstream file(name);
 	if (!file.good()) {
 		throw runtime_error("Cannot open file: " + name);
@@ -21,78 +23,117 @@ MotionDenoiser::MotionDenoiser(string name){
 		throw runtime_error("Failed to load frames from YUV file: " + name);
 	}
 	
+	cout << "Loaded " << frames.size() << " frames" << endl;
+	
+	if (frames[0].empty()) {
+		throw runtime_error("First frame is empty");
+	}
+	
 	m_frames = frames;
 	m_size = m_frames[0].size();
+	
+	if (m_size.width <= 0 || m_size.height <= 0) {
+		throw runtime_error("Invalid frame dimensions: " + 
+						  to_string(m_size.width) + "x" + 
+						  to_string(m_size.height));
+	}
+	
 	m_height = m_size.height;
 	m_width = m_size.width;
 	m_frameNum = m_frames.size();
 
-	dst.resize(m_frameNum);
-	for (int i = 0; i < dst.size(); i++) dst[i].create(m_size, CV_8UC3);
+	cout << "Frame dimensions: " << m_width << "x" << m_height << endl;
 
-	map_X.resize(m_frameNum - 1);
-	for (int i = 0; i < map_X.size(); i++) map_X[i].create(m_size, CV_32F);
+	try {
+		dst.resize(m_frameNum);
+		for (int i = 0; i < dst.size(); i++) {
+			dst[i].create(m_size, CV_8UC3);
+			if (dst[i].empty()) {
+				throw runtime_error("Failed to create dst matrix at index " + to_string(i));
+			}
+		}
 
-	map_Y.resize(m_frameNum - 1);
-	for (int i = 0; i < map_Y.size(); i++) map_Y[i].create(m_size, CV_32F);
+		for (int i = 0; i < m_frameNum; i++) {
+			cout << "Applying Gaussian smoothing to frame " << i << endl;
+			Mat smoothed;
+			GaussianBlur(m_frames[i], smoothed, Size(5, 5), 0, 0);
+			if (smoothed.empty()) {
+				throw runtime_error("Gaussian smoothing failed for frame " + to_string(i));
+			}
+			m_frames[i] = smoothed;
+		}
 
-	temp_map_X.resize(2 * N);
-	for (int i = 0; i < temp_map_X.size(); i++){
-		temp_map_X[i].create(m_size, CV_32F);
-		temp_map_X[i].setTo(1);
-	}
+		map_X.resize(m_frameNum - 1);
+		for (int i = 0; i < map_X.size(); i++) map_X[i].create(m_size, CV_32F);
 
-	temp_map_Y.resize(2 * N);
-	for (int i = 0; i < temp_map_Y.size(); i++){
-		temp_map_Y[i].create(m_size, CV_32F);
-		temp_map_Y[i].setTo(1);
-	}
+		map_Y.resize(m_frameNum - 1);
+		for (int i = 0; i < map_Y.size(); i++) map_Y[i].create(m_size, CV_32F);
 
-	m_mask.create(m_size, CV_32FC1);
-	
-	m_dst_temp = cv::Mat::zeros(m_size, CV_32FC3);
-	m_diff = cv::Mat::zeros(m_size, CV_32FC1);
+		temp_map_X.resize(2 * N);
+		for (int i = 0; i < temp_map_X.size(); i++){
+			temp_map_X[i].create(m_size, CV_32F);
+			temp_map_X[i].setTo(1);
+		}
 
-	m_temp = cv::Mat::zeros(m_size, CV_8UC3);
-	m_mapedX = cv::Mat::zeros(m_size, CV_32FC3);
-	m_mapedY = cv::Mat::zeros(m_size, CV_32FC3);
-	
-	m_Counter_adder = cv::Mat::ones(m_size, CV_32F);
-	m_mask_temp=cv::Mat::ones(m_size, CV_32FC1);
+		temp_map_Y.resize(2 * N);
+		for (int i = 0; i < temp_map_Y.size(); i++){
+			temp_map_Y[i].create(m_size, CV_32F);
+			temp_map_Y[i].setTo(1);
+		}
 
-	formatX = cv::Mat::zeros(m_size, CV_32F);
-	for (int i = 0; i < formatX.rows; i++)
-		for (int j = 0; j < formatX.cols; j++)
-			formatX.at<float>(i, j) = j;
-	
-	formatY = cv::Mat::zeros(m_size, CV_32F);
-	for (int i = 0; i < formatY.rows; i++)
-		for (int j = 0; j < formatY.cols; j++)
-			formatY.at<float>(i, j) = i;
+		m_mask.create(m_size, CV_32FC1);
+		
+		m_dst_temp = cv::Mat::zeros(m_size, CV_32FC3);
+		m_diff = cv::Mat::zeros(m_size, CV_32FC1);
 
-	vector<cv::Mat> color_map;
-	vector<cv::Mat> arrow_map;
-	optical_flow_img.push_back(color_map);
-	optical_flow_img.push_back(arrow_map);
-	optical_flow_img[0].resize(m_frameNum - 1);
-	optical_flow_img[1].resize(m_frameNum - 1);
+		m_temp = cv::Mat::zeros(m_size, CV_8UC3);
+		m_mapedX = cv::Mat::zeros(m_size, CV_32FC3);
+		m_mapedY = cv::Mat::zeros(m_size, CV_32FC3);
+		
+		m_Counter_adder = cv::Mat::ones(m_size, CV_32F);
+		m_mask_temp=cv::Mat::ones(m_size, CV_32FC1);
 
-	for(int i = 0; i < map_X.size(); i++)
-	{
+		formatX = cv::Mat::zeros(m_size, CV_32F);
+		for (int i = 0; i < formatX.rows; i++)
+			for (int j = 0; j < formatX.cols; j++)
+				formatX.at<float>(i, j) = j;
+		
+		formatY = cv::Mat::zeros(m_size, CV_32F);
+		for (int i = 0; i < formatY.rows; i++)
+			for (int j = 0; j < formatY.cols; j++)
+				formatY.at<float>(i, j) = i;
+
+		vector<cv::Mat> color_map;
+		vector<cv::Mat> arrow_map;
+		optical_flow_img.push_back(color_map);
+		optical_flow_img.push_back(arrow_map);
+		optical_flow_img[0].resize(m_frameNum - 1);
+		optical_flow_img[1].resize(m_frameNum - 1);
+
+		for(int i = 0; i < map_X.size(); i++)
+		{
 #if COLOR   
-		optical_flow_img[0][i].create(m_size, CV_8UC3);
+			optical_flow_img[0][i].create(m_size, CV_8UC3);
 #endif
 
 #if ARROW
-		optical_flow_img[1][i].create(m_size, CV_8UC3);
+			optical_flow_img[1][i].create(m_size, CV_8UC3);
 #endif
-	}
+		}
 
-	pcl = (int **)malloc(55 * sizeof(int *));
-	pcl[0] = (int*)malloc(3 * 55 * sizeof(int));
-	for(unsigned int i = 1; i < 55; i++)
-		pcl[i] = pcl[i - 1] + 3;
-	init_color_wheel(pcl);
+		pcl = (int **)malloc(55 * sizeof(int *));
+		pcl[0] = (int*)malloc(3 * 55 * sizeof(int));
+		for(unsigned int i = 1; i < 55; i++)
+			pcl[i] = pcl[i - 1] + 3;
+		init_color_wheel(pcl);
+
+	} catch (const cv::Exception& e) {
+		throw runtime_error("OpenCV error during initialization: " + string(e.what()));
+	} catch (const std::exception& e) {
+		throw runtime_error("Error during initialization: " + string(e.what()));
+	}
+	
+	cout << "MotionDenoiser initialization complete" << endl;
 }
 
 
@@ -119,7 +160,7 @@ void MotionDenoiser::MotionEstimation(){
 		}
 		else
 		{
-			myDenseOF(m_frames[i - 1], m_frames[i], map_X[i - 1], map_Y[i - 1], DENSE_RLOF);
+			myDenseOF(m_frames[i - 1], m_frames[i], map_X[i - 1], map_Y[i - 1], CLG_7);
 		}
 		Get_optical_flow_img(map_X[i - 1], map_Y[i - 1], optical_flow_img[0][i - 1], optical_flow_img[1][i - 1]);
 		//cout << "Get_optical_flow_img Done" << endl;

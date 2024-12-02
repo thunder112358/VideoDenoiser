@@ -28,6 +28,18 @@ add_library(tvl1flow STATIC
     ../lib/tvl1flow/zoom.c
 )
 
+# Add CLG library
+add_library(clg7 STATIC
+    ../lib/clg_7/source/bicubic_interpolation.c
+    ../lib/clg_7/source/clg_of.c
+    ../lib/clg_7/source/zoom.c
+    ../lib/clg_7/source/clg_of_main.c
+    ../lib/clg_7/source/iio.c
+    ../lib/clg_7/source/mask.c
+    ../lib/clg_7/source/util.c
+     
+    )
+
 # Source files
 set(SOURCES
     main.cpp
@@ -50,9 +62,9 @@ set(HEADERS
 )
 
 # Include OpenCV directories
-include_directories(${OpenCV_INCLUDE_DIRS} ${VTK_INCLUDE_DIRS} ../lib/tvl1flow)
+include_directories(${OpenCV_INCLUDE_DIRS} ${VTK_INCLUDE_DIRS} ../lib/tvl1flow ../lib/clg_7/source)
 
 # Link OpenCV libraries
 link_directories(${OpenCV_LIB_DIR})
 add_executable(VideoDenoiser ${SOURCES} ${HEADERS})
-target_link_libraries(VideoDenoiser ${OpenCV_LIBS}   Eigen3::Eigen Iconv::Iconv ${VTK_LIBRARIES} gflags tvl1flow) 
+target_link_libraries(VideoDenoiser ${OpenCV_LIBS}   Eigen3::Eigen Iconv::Iconv ${VTK_LIBRARIES} gflags tvl1flow clg7) 

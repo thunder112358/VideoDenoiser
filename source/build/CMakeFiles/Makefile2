@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/ivan/yasser/VideoDenoiser/source/build
 
 # The main recursive "all" target.
 all: CMakeFiles/VideoDenoiser.dir/all
+all: CMakeFiles/clg7.dir/all
 all: CMakeFiles/tvl1flow.dir/all
 
 .PHONY : all
@@ -65,6 +66,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/VideoDenoiser.dir/clean
+clean: CMakeFiles/clg7.dir/clean
 clean: CMakeFiles/tvl1flow.dir/clean
 
 .PHONY : clean
@@ -73,6 +75,7 @@ clean: CMakeFiles/tvl1flow.dir/clean
 # Target rules for target CMakeFiles/VideoDenoiser.dir
 
 # All Build rule for target.
+CMakeFiles/VideoDenoiser.dir/all: CMakeFiles/clg7.dir/all
 CMakeFiles/VideoDenoiser.dir/all: CMakeFiles/tvl1flow.dir/all
 	$(MAKE) -f CMakeFiles/VideoDenoiser.dir/build.make CMakeFiles/VideoDenoiser.dir/depend
 	$(MAKE) -f CMakeFiles/VideoDenoiser.dir/build.make CMakeFiles/VideoDenoiser.dir/build
@@ -81,7 +84,7 @@ CMakeFiles/VideoDenoiser.dir/all: CMakeFiles/tvl1flow.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/VideoDenoiser.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles 21
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/VideoDenoiser.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles 0
 .PHONY : CMakeFiles/VideoDenoiser.dir/rule
@@ -97,13 +100,40 @@ CMakeFiles/VideoDenoiser.dir/clean:
 .PHONY : CMakeFiles/VideoDenoiser.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/clg7.dir
+
+# All Build rule for target.
+CMakeFiles/clg7.dir/all:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/depend
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles --progress-num=9,10,11,12,13,14,15,16 "Built target clg7"
+.PHONY : CMakeFiles/clg7.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/clg7.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/clg7.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles 0
+.PHONY : CMakeFiles/clg7.dir/rule
+
+# Convenience name for target.
+clg7: CMakeFiles/clg7.dir/rule
+
+.PHONY : clg7
+
+# clean rule for target.
+CMakeFiles/clg7.dir/clean:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/clean
+.PHONY : CMakeFiles/clg7.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/tvl1flow.dir
 
 # All Build rule for target.
 CMakeFiles/tvl1flow.dir/all:
 	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/depend
 	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles --progress-num=9,10,11,12,13 "Built target tvl1flow"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles --progress-num=17,18,19,20,21 "Built target tvl1flow"
 .PHONY : CMakeFiles/tvl1flow.dir/all
 
 # Build rule for subdir invocation for target.

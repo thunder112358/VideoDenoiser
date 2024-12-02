@@ -18,7 +18,7 @@ vector<cv::Mat> GetFramesFromYUV(const string& filename, double &fps) {
 
 	// Read frames until end of file
 	while (file.read(reinterpret_cast<char*>(yuv_buffer), FRAME_SIZE)) {
-		// Convert YUV to BGR
+		// Convert YUV to BGRcd ..
 		cv::Mat bgr_frame = yuv420p_to_bgr(yuv_buffer);
 		frames.push_back(bgr_frame.clone());
 	}

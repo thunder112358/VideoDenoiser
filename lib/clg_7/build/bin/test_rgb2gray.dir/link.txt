@@ -1,0 +1,1 @@
+/usr/bin/cc -std=c99 -Wall -Wextra -Wshadow -Wno-unused -pedantic -g -DNDEBUG -D_GNU_SOURCE  -rdynamic CMakeFiles/../bin/test_rgb2gray.dir/source/test_rgb2gray.c.o CMakeFiles/../bin/test_rgb2gray.dir/source/iio.c.o  -o ../bin/test_rgb2gray  -ljpeg -ltiff -lpng -lm 

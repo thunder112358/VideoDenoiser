@@ -122,6 +122,12 @@ CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/OpticalFlow/MeshFlow_Vide
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/opencv_contrib/modules/optflow/include/opencv2/optflow/pcaflow.hpp
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/opencv_contrib/modules/optflow/include/opencv2/optflow/rlofflow.hpp
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/opencv_contrib/modules/optflow/include/opencv2/optflow/sparse_matching_gpc.hpp
+CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.h
+CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.h
+CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.h
+CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.h
+CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.h
+CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.h
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.c
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: /home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c
