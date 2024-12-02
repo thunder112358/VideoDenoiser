@@ -40,6 +40,32 @@ add_library(clg7 STATIC
      
     )
 
+# Add SMS optical flow library
+add_library(sms_of STATIC
+    ../lib/sms_optic_flow_2.0/spatial/brox_optic_flow.h
+    ../lib/sms_optic_flow_2.0/spatial/mask.h
+    ../lib/sms_optic_flow_2.0/spatial/bicubic_interpolation.h
+    ../lib/sms_optic_flow_2.0/spatial/zoom.h
+    ../lib/sms_optic_flow_2.0/spatial/gaussian.h
+    ../lib/sms_optic_flow_2.0/temporal/brox_optic_flow.h
+    ../lib/sms_optic_flow_2.0/temporal/mask.h
+    ../lib/sms_optic_flow_2.0/temporal/bicubic_interpolation.h
+    ../lib/sms_optic_flow_2.0/temporal/zoom.h
+    ../lib/sms_optic_flow_2.0/temporal/gaussian.h
+)
+
+# Set SMS library properties
+set_target_properties(sms_of PROPERTIES 
+    LINKER_LANGUAGE CXX
+    CXX_STANDARD 11
+)
+
+# Add compile definitions for SMS
+target_compile_definitions(sms_of PRIVATE
+    SMS_SPATIAL_IMPLEMENTATION
+    SMS_TEMPORAL_IMPLEMENTATION
+)
+
 # Source files
 set(SOURCES
     main.cpp
@@ -62,9 +88,9 @@ set(HEADERS
 )
 
 # Include OpenCV directories
-include_directories(${OpenCV_INCLUDE_DIRS} ${VTK_INCLUDE_DIRS} ../lib/tvl1flow ../lib/clg_7/source)
+include_directories(${OpenCV_INCLUDE_DIRS} ${VTK_INCLUDE_DIRS} ../lib/tvl1flow ../lib/clg_7/source ../lib/sms_optic_flow_2.0/spatial ../lib/sms_optic_flow_2.0/temporal)
 
 # Link OpenCV libraries
 link_directories(${OpenCV_LIB_DIR})
 add_executable(VideoDenoiser ${SOURCES} ${HEADERS})
-target_link_libraries(VideoDenoiser ${OpenCV_LIBS}   Eigen3::Eigen Iconv::Iconv ${VTK_LIBRARIES} gflags tvl1flow clg7) 
+target_link_libraries(VideoDenoiser ${OpenCV_LIBS}   Eigen3::Eigen Iconv::Iconv ${VTK_LIBRARIES} gflags tvl1flow clg7 sms_of) 

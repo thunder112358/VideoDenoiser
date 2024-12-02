@@ -124,6 +124,19 @@ VideoDenoiser/fast:
 .PHONY : VideoDenoiser/fast
 
 #=============================================================================
+# Target rules for targets named sms_of
+
+# Build rule for target.
+sms_of: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sms_of
+.PHONY : sms_of
+
+# fast build rule for target.
+sms_of/fast:
+	$(MAKE) -f CMakeFiles/sms_of.dir/build.make CMakeFiles/sms_of.dir/build
+.PHONY : sms_of/fast
+
+#=============================================================================
 # Target rules for targets named clg7
 
 # Build rule for target.
@@ -644,6 +657,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... VideoDenoiser"
+	@echo "... sms_of"
 	@echo "... clg7"
 	@echo "... tvl1flow"
 	@echo "... DenseOF.o"

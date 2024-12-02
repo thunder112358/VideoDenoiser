@@ -36,6 +36,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/tcl"
   "../../lib/tvl1flow"
   "../../lib/clg_7/source"
+  "../../lib/sms_optic_flow_2.0/spatial"
+  "../../lib/sms_optic_flow_2.0/temporal"
   "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/build"
   "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/include"
   "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/modules/core/include"
@@ -108,6 +110,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles/tvl1flow.dir/DependInfo.cmake"
   "/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles/clg7.dir/DependInfo.cmake"
+  "/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles/sms_of.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

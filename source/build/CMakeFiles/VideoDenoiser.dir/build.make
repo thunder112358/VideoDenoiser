@@ -326,6 +326,7 @@ VideoDenoiser: /usr/lib/x86_64-linux-gnu/libvtkWrappingJava-7.1.so.7.1p.1
 VideoDenoiser: /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.2
 VideoDenoiser: libtvl1flow.a
 VideoDenoiser: libclg7.a
+VideoDenoiser: libsms_of.a
 VideoDenoiser: /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/build/3rdparty/lib/libade.a
 VideoDenoiser: /home/ivan/anaconda3/lib/libhdf5.so
 VideoDenoiser: /usr/lib/x86_64-linux-gnu/librt.so

@@ -160,7 +160,7 @@ void MotionDenoiser::MotionEstimation(){
 		}
 		else
 		{
-			myDenseOF(m_frames[i - 1], m_frames[i], map_X[i - 1], map_Y[i - 1], CLG_7);
+			myDenseOF(m_frames[i - 1], m_frames[i], map_X[i - 1], map_Y[i - 1], SMS_SPATIAL);
 		}
 		Get_optical_flow_img(map_X[i - 1], map_Y[i - 1], optical_flow_img[0][i - 1], optical_flow_img[1][i - 1]);
 		//cout << "Get_optical_flow_img Done" << endl;

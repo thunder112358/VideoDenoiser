@@ -22,13 +22,27 @@ namespace clg {
     }
 }
 
+// Add SMS includes with proper namespaces
+namespace sms {
+    #include "../lib/sms_optic_flow_2.0/spatial/mask.h"
+    #include "../lib/sms_optic_flow_2.0/spatial/gaussian.h"
+    #include "../lib/sms_optic_flow_2.0/spatial/bicubic_interpolation.h"
+    #include "../lib/sms_optic_flow_2.0/spatial/zoom.h"
+    #include "../lib/sms_optic_flow_2.0/spatial/brox_optic_flow.h"
+}
+
+// Add SMS temporal includes
+namespace sms_temporal {
+    #include "../lib/sms_optic_flow_2.0/temporal/brox_optic_flow.h"
+}
+
 using namespace cv;
 using namespace std;
 
 void tvl1_flow(const Mat& I0, const Mat& I1, Mat& flow_x, Mat& flow_y) {
     // Convert images to float arrays for TVL1
     float* I0_data = new float[I0.rows * I0.cols];
-    float* I1_data = new float[I1.rows * I1.cols];
+    float* I1_data = new float[I0.rows * I0.cols];
     float* u = new float[I0.rows * I0.cols]; // x component
     float* v = new float[I0.rows * I0.cols]; // y component
 
@@ -195,6 +209,80 @@ void clg_flow(const Mat& I0, const Mat& I1, Mat& flow_x, Mat& flow_y) {
     printf("Memory cleaned up\n"); // Debug print
 }
 
+// Update SMS spatial flow implementation
+void sms_spatial_flow(const cv::Mat& I0, const cv::Mat& I1, cv::Mat& flow_x, cv::Mat& flow_y) {
+    std::cout << "Starting SMS spatial flow..." << std::endl;
+    std::cout << "Input dimensions: " << I0.rows << "x" << I0.cols << std::endl;
+
+    // Convert images to float arrays
+    std::cout << "Allocating memory for arrays..." << std::endl;
+    float* I0_data = new float[I0.rows * I0.cols];
+    float* I1_data = new float[I0.rows * I0.cols];
+    float* u = new float[I0.rows * I0.cols];
+    float* v = new float[I0.rows * I0.cols];
+
+    // Convert BGR to grayscale
+    std::cout << "Converting to grayscale..." << std::endl;
+    cv::Mat I0_gray, I1_gray;
+    cvtColor(I0, I0_gray, cv::COLOR_BGR2GRAY);
+    cvtColor(I1, I1_gray, cv::COLOR_BGR2GRAY);
+
+    // Copy data to float arrays
+    std::cout << "Copying data to float arrays..." << std::endl;
+    for(int i = 0; i < I0.rows; i++) {
+        for(int j = 0; j < I0.cols; j++) {
+            I0_data[i*I0.cols + j] = I0_gray.at<uchar>(i,j);
+            I1_data[i*I0.cols + j] = I1_gray.at<uchar>(i,j);
+        }
+    }
+
+    // SMS parameters
+    std::cout << "Setting SMS parameters..." << std::endl;
+    const float alpha = 18.0;
+    const float gamma = 7.0;
+    const int nscales = 5;
+    const float zfactor = 0.75;
+    const float tol = 0.0001;
+    const int inner_iter = 1;
+    const int outer_iter = 15;
+    const bool verbose = true;  // Enable verbose mode for more logging
+
+    try {
+        // Run SMS spatial optical flow using proper namespace
+        std::cout << "Running SMS optical flow..." << std::endl;
+        sms::brox_optic_flow(
+            I0_data, I1_data, u, v, I0.cols, I0.rows,
+            alpha, gamma, nscales, zfactor, tol,
+            inner_iter, outer_iter, verbose
+        );
+
+        // Copy results back to OpenCV matrices
+        std::cout << "Copying results back to matrices..." << std::endl;
+        for(int i = 0; i < I0.rows; i++) {
+            for(int j = 0; j < I0.cols; j++) {
+                flow_x.at<float>(i,j) = u[i*I0.cols + j];
+                flow_y.at<float>(i,j) = v[i*I0.cols + j];
+            }
+        }
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Exception in SMS flow: " << e.what() << std::endl;
+        throw;
+    }
+    catch (...) {
+        std::cerr << "Unknown exception in SMS flow" << std::endl;
+        throw;
+    }
+
+    // Clean up
+    std::cout << "Cleaning up memory..." << std::endl;
+    delete[] I0_data;
+    delete[] I1_data;
+    delete[] u;
+    delete[] v;
+    std::cout << "SMS spatial flow complete" << std::endl;
+}
+
 void myDenseOF(const cv::Mat source, const cv::Mat target, cv::Mat &mapX, cv::Mat &mapY, int method) {
     printf("Starting myDenseOF with method: %d\n", method); // Debug print
     
@@ -243,6 +331,19 @@ void myDenseOF(const cv::Mat source, const cv::Mat target, cv::Mat &mapX, cv::Ma
         clg_flow(source, target, flow_x, flow_y);
         
         // Convert flow to map format
+        for(int i = 0; i < source.rows; i++) {
+            for(int j = 0; j < source.cols; j++) {
+                mapX.at<float>(i,j) = -flow_x.at<float>(i,j);
+                mapY.at<float>(i,j) = -flow_y.at<float>(i,j);
+            }
+        }
+    }
+    else if(method == SMS_SPATIAL) {
+        Mat flow_x = Mat::zeros(source.rows, source.cols, CV_32F);
+        Mat flow_y = Mat::zeros(source.rows, source.cols, CV_32F);
+        
+        sms_spatial_flow(source, target, flow_x, flow_y);
+        
         for(int i = 0; i < source.rows; i++) {
             for(int j = 0; j < source.cols; j++) {
                 mapX.at<float>(i,j) = -flow_x.at<float>(i,j);

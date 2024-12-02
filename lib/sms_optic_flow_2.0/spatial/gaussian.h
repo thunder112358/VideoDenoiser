@@ -172,6 +172,58 @@ inline void gaussian(
     gaussian(out, xdim, ydim, sigma, bc, precision);
 }
 
+// Add this function overload for float arrays
+void gaussian(float *I, int nx, int ny, float sigma) {
+    // Create temporary array
+    float *T = new float[nx * ny];
+    
+    // Compute Gaussian kernel
+    const int ksize = (int)(3.0f * sigma);
+    float *kernel = new float[2 * ksize + 1];
+    float sum = 0.0f;
+    
+    for(int i = -ksize; i <= ksize; i++) {
+        kernel[i + ksize] = exp(-0.5f * (i * i) / (sigma * sigma));
+        sum += kernel[i + ksize];
+    }
+    
+    // Normalize kernel
+    for(int i = 0; i <= 2 * ksize; i++) {
+        kernel[i] /= sum;
+    }
+    
+    // Horizontal convolution
+    for(int y = 0; y < ny; y++) {
+        for(int x = 0; x < nx; x++) {
+            float sum = 0.0f;
+            for(int k = -ksize; k <= ksize; k++) {
+                int xx = x + k;
+                if(xx < 0) xx = 0;
+                if(xx >= nx) xx = nx - 1;
+                sum += I[y * nx + xx] * kernel[k + ksize];
+            }
+            T[y * nx + x] = sum;
+        }
+    }
+    
+    // Vertical convolution
+    for(int y = 0; y < ny; y++) {
+        for(int x = 0; x < nx; x++) {
+            float sum = 0.0f;
+            for(int k = -ksize; k <= ksize; k++) {
+                int yy = y + k;
+                if(yy < 0) yy = 0;
+                if(yy >= ny) yy = ny - 1;
+                sum += T[yy * nx + x] * kernel[k + ksize];
+            }
+            I[y * nx + x] = sum;
+        }
+    }
+    
+    delete[] kernel;
+    delete[] T;
+}
+
 
 #endif
 

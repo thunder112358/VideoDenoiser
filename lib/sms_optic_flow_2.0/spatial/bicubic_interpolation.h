@@ -258,4 +258,37 @@ void bicubic_interpolation(
 	}
 }
 
+// Add float version of bicubic interpolation
+float bicubic_interpolation_at(const float *input, float x, float y, int nx, int ny) {
+    // Implementation for float arrays
+    const int ix = (int)floor(x);
+    const int iy = (int)floor(y);
+    const float dx = x - ix;
+    const float dy = y - iy;
+    
+    float values[4][4];
+    for(int j = -1; j <= 2; j++) {
+        for(int i = -1; i <= 2; i++) {
+            int xx = ix + i;
+            int yy = iy + j;
+            
+            // Handle boundary conditions
+            if(xx < 0) xx = 0;
+            if(xx >= nx) xx = nx - 1;
+            if(yy < 0) yy = 0;
+            if(yy >= ny) yy = ny - 1;
+            
+            values[j+1][i+1] = input[yy * nx + xx];
+        }
+    }
+    
+    // Interpolate
+    float a0 = values[1][0] - values[1][1] - values[1][2] + values[1][3];
+    float a1 = values[1][2] - values[1][0];
+    float a2 = values[1][1] - values[1][0];
+    float a3 = values[1][0];
+    
+    return a0*dx*dx*dx + a1*dx*dx + a2*dx + a3;
+}
+
 #endif
