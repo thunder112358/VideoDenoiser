@@ -1,5 +1,6 @@
 #include "MotionDenoiser.h"
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 using namespace cv;
@@ -9,7 +10,18 @@ using namespace cv;
 
 MotionDenoiser::MotionDenoiser(string name){
 	
-	m_frames = GetFrames(name, m_fps);
+	std::ifstream file(name);
+	if (!file.good()) {
+		throw runtime_error("Cannot open file: " + name);
+	}
+	file.close();
+	
+	vector<Mat> frames = GetFramesFromYUV(name, m_fps);
+	if (frames.empty()) {
+		throw runtime_error("Failed to load frames from YUV file: " + name);
+	}
+	
+	m_frames = frames;
 	m_size = m_frames[0].size();
 	m_height = m_size.height;
 	m_width = m_size.width;
@@ -238,38 +250,42 @@ void MotionDenoiser::TargetFrameBuild(int reference, cv::Mat &dst){
 	}
 }
 
-void MotionDenoiser::SaveResult(string name, vector<string> of_name){
-	
-	cv::VideoWriter outVideoWriter;
-	outVideoWriter.open(name, cv::VideoWriter::fourcc('X', 'V', 'I', 'D'), m_fps,m_size);
-	
-	for (int i = 0; i < m_frameNum; i++){
-		outVideoWriter << dst[i];
-	}
-	outVideoWriter.~VideoWriter();
+void MotionDenoiser::SaveResult(string name, vector<string> of_name) {
+    // Create output directory if it doesn't exist
+    std::string dir = name.substr(0, name.find_last_of("/\\"));
+    std::system(("mkdir -p " + dir).c_str());
 
-	if(COLOR)
-	{
-		cv::VideoWriter opticalFlowWriter;
-		opticalFlowWriter.open(of_name[0], cv::VideoWriter::fourcc('X', 'V', 'I', 'D'), m_fps, m_size);
-		for(int i = 0; i < m_frameNum - 1; i++)
-		{
-			opticalFlowWriter << optical_flow_img[0][i];
-		}
-		opticalFlowWriter.~VideoWriter();
-	}
+    // Open output file in binary mode
+    std::ofstream outFile(name, std::ios::binary);
+    if (!outFile.is_open()) {
+        throw runtime_error("Cannot open output file: " + name);
+    }
 
-	if(ARROW)
-	{
-		cv::VideoWriter opticalFlowWriter;
-		opticalFlowWriter.open(of_name[1], cv::VideoWriter::fourcc('X', 'V', 'I', 'D'), m_fps, m_size);
-		for(int i = 0; i < m_frameNum - 1; i++)
-		{
-			opticalFlowWriter << optical_flow_img[1][i];
-		}
-		opticalFlowWriter.~VideoWriter();
-	}
+    // For each frame
+    for (int i = 0; i < m_frameNum; i++) {
+        Mat yuv;
+        // Convert BGR to YUV420
+        cvtColor(dst[i], yuv, COLOR_BGR2YUV_I420);
+        
+        // Write YUV data
+        outFile.write(reinterpret_cast<char*>(yuv.data), yuv.total() * yuv.elemSize());
+    }
+    outFile.close();
 
+    // Save optical flow visualizations
+    if (COLOR) {
+        for (int i = 0; i < optical_flow_img[0].size(); i++) {
+            std::string colorFileName = of_name[0] + std::to_string(i) + ".png";
+            cv::imwrite(colorFileName, optical_flow_img[0][i]);
+        }
+    }
+
+    if (ARROW) {
+        for (int i = 0; i < optical_flow_img[1].size(); i++) {
+            std::string arrowFileName = of_name[1] + std::to_string(i) + ".png";
+            cv::imwrite(arrowFileName, optical_flow_img[1][i]);
+        }
+    }
 }
 
 

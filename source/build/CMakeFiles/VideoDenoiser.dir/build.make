@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source
+CMAKE_SOURCE_DIR = /home/ivan/yasser/VideoDenoiser/source
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build
+CMAKE_BINARY_DIR = /home/ivan/yasser/VideoDenoiser/source/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/VideoDenoiser.dir/depend.make
@@ -59,94 +59,94 @@ include CMakeFiles/VideoDenoiser.dir/flags.make
 
 CMakeFiles/VideoDenoiser.dir/main.cpp.o: CMakeFiles/VideoDenoiser.dir/flags.make
 CMakeFiles/VideoDenoiser.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/VideoDenoiser.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VideoDenoiser.dir/main.cpp.o -c /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/VideoDenoiser.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VideoDenoiser.dir/main.cpp.o -c /home/ivan/yasser/VideoDenoiser/source/main.cpp
 
 CMakeFiles/VideoDenoiser.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VideoDenoiser.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/main.cpp > CMakeFiles/VideoDenoiser.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/yasser/VideoDenoiser/source/main.cpp > CMakeFiles/VideoDenoiser.dir/main.cpp.i
 
 CMakeFiles/VideoDenoiser.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VideoDenoiser.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/main.cpp -o CMakeFiles/VideoDenoiser.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/yasser/VideoDenoiser/source/main.cpp -o CMakeFiles/VideoDenoiser.dir/main.cpp.s
 
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: CMakeFiles/VideoDenoiser.dir/flags.make
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o: ../DenseOF.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o -c /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/DenseOF.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o -c /home/ivan/yasser/VideoDenoiser/source/DenseOF.cpp
 
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/DenseOF.cpp > CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/yasser/VideoDenoiser/source/DenseOF.cpp > CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.i
 
 CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/DenseOF.cpp -o CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/yasser/VideoDenoiser/source/DenseOF.cpp -o CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.s
 
 CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.o: CMakeFiles/VideoDenoiser.dir/flags.make
 CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.o: ../Fast_klt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.o -c /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/Fast_klt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.o -c /home/ivan/yasser/VideoDenoiser/source/Fast_klt.cpp
 
 CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/Fast_klt.cpp > CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/yasser/VideoDenoiser/source/Fast_klt.cpp > CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.i
 
 CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/Fast_klt.cpp -o CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/yasser/VideoDenoiser/source/Fast_klt.cpp -o CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.s
 
 CMakeFiles/VideoDenoiser.dir/Mesh.cpp.o: CMakeFiles/VideoDenoiser.dir/flags.make
 CMakeFiles/VideoDenoiser.dir/Mesh.cpp.o: ../Mesh.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/VideoDenoiser.dir/Mesh.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VideoDenoiser.dir/Mesh.cpp.o -c /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/Mesh.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/VideoDenoiser.dir/Mesh.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VideoDenoiser.dir/Mesh.cpp.o -c /home/ivan/yasser/VideoDenoiser/source/Mesh.cpp
 
 CMakeFiles/VideoDenoiser.dir/Mesh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VideoDenoiser.dir/Mesh.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/Mesh.cpp > CMakeFiles/VideoDenoiser.dir/Mesh.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/yasser/VideoDenoiser/source/Mesh.cpp > CMakeFiles/VideoDenoiser.dir/Mesh.cpp.i
 
 CMakeFiles/VideoDenoiser.dir/Mesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VideoDenoiser.dir/Mesh.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/Mesh.cpp -o CMakeFiles/VideoDenoiser.dir/Mesh.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/yasser/VideoDenoiser/source/Mesh.cpp -o CMakeFiles/VideoDenoiser.dir/Mesh.cpp.s
 
 CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.o: CMakeFiles/VideoDenoiser.dir/flags.make
 CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.o: ../MeshFlow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.o -c /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/MeshFlow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.o -c /home/ivan/yasser/VideoDenoiser/source/MeshFlow.cpp
 
 CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/MeshFlow.cpp > CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/yasser/VideoDenoiser/source/MeshFlow.cpp > CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.i
 
 CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/MeshFlow.cpp -o CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/yasser/VideoDenoiser/source/MeshFlow.cpp -o CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.s
 
 CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.o: CMakeFiles/VideoDenoiser.dir/flags.make
 CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.o: ../MotionDenoiser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.o -c /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/MotionDenoiser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.o -c /home/ivan/yasser/VideoDenoiser/source/MotionDenoiser.cpp
 
 CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/MotionDenoiser.cpp > CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/yasser/VideoDenoiser/source/MotionDenoiser.cpp > CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.i
 
 CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/MotionDenoiser.cpp -o CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/yasser/VideoDenoiser/source/MotionDenoiser.cpp -o CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.s
 
 CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.o: CMakeFiles/VideoDenoiser.dir/flags.make
 CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.o: ../VideoIO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.o -c /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/VideoIO.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.o -c /home/ivan/yasser/VideoDenoiser/source/VideoIO.cpp
 
 CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/VideoIO.cpp > CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/yasser/VideoDenoiser/source/VideoIO.cpp > CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.i
 
 CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/VideoIO.cpp -o CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/yasser/VideoDenoiser/source/VideoIO.cpp -o CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.s
 
 # Object files for target VideoDenoiser
 VideoDenoiser_OBJECTS = \
@@ -488,7 +488,7 @@ VideoDenoiser: /usr/lib/x86_64-linux-gnu/libfreetype.so
 VideoDenoiser: /usr/lib/x86_64-linux-gnu/libvtkCommonCore-7.1.so.7.1p.1
 VideoDenoiser: /usr/lib/x86_64-linux-gnu/libvtksys-7.1.so.7.1p.1
 VideoDenoiser: CMakeFiles/VideoDenoiser.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable VideoDenoiser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable VideoDenoiser"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/VideoDenoiser.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -501,6 +501,6 @@ CMakeFiles/VideoDenoiser.dir/clean:
 .PHONY : CMakeFiles/VideoDenoiser.dir/clean
 
 CMakeFiles/VideoDenoiser.dir/depend:
-	cd /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build /home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles/VideoDenoiser.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ivan/yasser/VideoDenoiser/source/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ivan/yasser/VideoDenoiser/source /home/ivan/yasser/VideoDenoiser/source /home/ivan/yasser/VideoDenoiser/source/build /home/ivan/yasser/VideoDenoiser/source/build /home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles/VideoDenoiser.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/VideoDenoiser.dir/depend
 

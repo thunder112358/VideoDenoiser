@@ -6,36 +6,29 @@
 using namespace cv;
 int main()
 {
-	vector<string> names;
-	vector<string> outNames;
+	vector<string> input_names;
+	vector<string> output_names;
 	vector<string> optical_flow_names;
 
-	for(int i = 1; i <= 1; i++)
-	{
-		cout << "eee" << endl;
-		string method_name = "DeepFlow";
-		string video_name = "input";
-		string name = "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/input/" + video_name + ".mp4";
-		string outname = "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/output/" + video_name + "_" + method_name + ".avi";
-		string optical_flow_name_color = "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/output/" + video_name + "_" + method_name + "_color.avi";
-		string optical_flow_name_arrow = "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/output/" + video_name + "_" + method_name + "_of_arrow.avi";
+	string method_name = "DeepFlow";
+	string video_name = "input";
+	
+	// Update paths for YUV files
+	string name = "../../input.yuv";
+	string outname = "../output/" + video_name + "_" + method_name + ".yuv";
+	string optical_flow_name_color = "../output/" + video_name + "_" + method_name + "_color.yuv";
+	string optical_flow_name_arrow = "../output/" + video_name + "_" + method_name + "_of_arrow.yuv";
 
-		names.push_back(name);
-		outNames.push_back(outname);
-		optical_flow_names.push_back(optical_flow_name_color);
-		optical_flow_names.push_back(optical_flow_name_arrow);
-			cout << name << endl;
-	cout << outname << endl;
-	}
+	input_names.push_back(name);
+	output_names.push_back(outname);
+	optical_flow_names.push_back(optical_flow_name_color);
+	optical_flow_names.push_back(optical_flow_name_arrow);
 
-
-	for( int i = 0; i < names.size(); i++)
-	{
-		MotionDenoiser denoiser(names[i]);
+	for(int i = 0; i < input_names.size(); i++) {
+		MotionDenoiser denoiser(input_names[i]);
 		denoiser.Execute();
-		denoiser.SaveResult(outNames[i], optical_flow_names);
+		denoiser.SaveResult(output_names[i], optical_flow_names);
 	}
 
 	return 0;
-
 }

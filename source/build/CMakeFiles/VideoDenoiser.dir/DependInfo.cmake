@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/DenseOF.cpp" "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o"
-  "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/Fast_klt.cpp" "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.o"
-  "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/Mesh.cpp" "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles/VideoDenoiser.dir/Mesh.cpp.o"
-  "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/MeshFlow.cpp" "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.o"
-  "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/MotionDenoiser.cpp" "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.o"
-  "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/VideoIO.cpp" "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.o"
-  "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/main.cpp" "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/source/build/CMakeFiles/VideoDenoiser.dir/main.cpp.o"
+  "/home/ivan/yasser/VideoDenoiser/source/DenseOF.cpp" "/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles/VideoDenoiser.dir/DenseOF.cpp.o"
+  "/home/ivan/yasser/VideoDenoiser/source/Fast_klt.cpp" "/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles/VideoDenoiser.dir/Fast_klt.cpp.o"
+  "/home/ivan/yasser/VideoDenoiser/source/Mesh.cpp" "/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles/VideoDenoiser.dir/Mesh.cpp.o"
+  "/home/ivan/yasser/VideoDenoiser/source/MeshFlow.cpp" "/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles/VideoDenoiser.dir/MeshFlow.cpp.o"
+  "/home/ivan/yasser/VideoDenoiser/source/MotionDenoiser.cpp" "/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles/VideoDenoiser.dir/MotionDenoiser.cpp.o"
+  "/home/ivan/yasser/VideoDenoiser/source/VideoIO.cpp" "/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.o"
+  "/home/ivan/yasser/VideoDenoiser/source/main.cpp" "/home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles/VideoDenoiser.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
