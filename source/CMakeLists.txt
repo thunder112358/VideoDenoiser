@@ -4,21 +4,61 @@ set(CMAKE_CXX_STANDARD 11)  # Specify the C++ standard
 cmake_policy(SET CMP0028 NEW)
 
 # Set the path to your OpenCV build and installation directories
-set(OpenCV_DIR "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/build")  # Adjust this path
-set(OpenCV_INCLUDE_DIRS "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/build/install/include")  # Adjust this path
-set(OpenCV_LIB_DIR "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/build/install/lib")  # Adjust this path
+set(OpenCV_DIR "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/build")
+set(OpenCV_INCLUDE_DIRS "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/build/install/include")
+set(OpenCV_LIB_DIR "/home/ivan/OpticalFlow/MeshFlow_Video_Denoising/opencv/build/install/lib")
 
-# Find OpenCV package
+# Find required packages
 find_package(OpenCV REQUIRED PATHS ${OpenCV_DIR} NO_DEFAULT_PATH)
-# Find Eigen3 package
 find_package(Eigen3 REQUIRED)
 find_package(Iconv REQUIRED)
 find_package(VTK REQUIRED)
-
-option(WITH_VTK "" OFF)
-set(WITH_VTK OFF CACHE BOOL "" FORCE)
-# Add gflags package
 find_package(gflags REQUIRED)
+
+# FFTW3 Configuration
+set(FFTW3_INCLUDE_DIRS "/usr/include")
+set(FFTW3_LIBRARIES -lfftw3 -lfftw3f)
+
+# Add sptwoIPOL library
+add_library(sptwoIPOL STATIC
+    ../lib/sptwoIPOL/src/library/libBasic.cpp
+    ../lib/sptwoIPOL/src/library/libImage.cpp
+    ../lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.cpp
+    ../lib/sptwoIPOL/src/libNoiseVideo/libFlow.cpp
+    ../lib/sptwoIPOL/src/library/libImageFormatPM.cpp
+    ../lib/sptwoIPOL/src/library/libImageFormats.c
+    ../lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.cpp
+)
+
+target_include_directories(sptwoIPOL PUBLIC
+    ../lib/sptwoIPOL/src
+    ../lib/sptwoIPOL/src/library
+    ../lib/sptwoIPOL/src/libNoiseVideo
+    ${FFTW3_INCLUDE_DIRS}
+)
+
+# Add IIO library
+add_library(iio STATIC
+    ../lib/iio/iio.c
+)
+
+target_link_libraries(sptwoIPOL
+    iio
+    ${FFTW3_LIBRARIES}
+    -ltiff
+    -lpng
+    -ljpeg
+)
+
+# Add sptwo processor library
+add_library(sptwo_processor
+    sptwo_processor.cpp
+)
+
+target_link_libraries(sptwo_processor
+    ${OpenCV_LIBS}
+    sptwoIPOL
+)
 
 # Add TVL1 library
 add_library(tvl1flow STATIC
@@ -37,8 +77,7 @@ add_library(clg7 STATIC
     ../lib/clg_7/source/iio.c
     ../lib/clg_7/source/mask.c
     ../lib/clg_7/source/util.c
-     
-    )
+)
 
 # Add SMS optical flow library
 add_library(sms_of STATIC
@@ -75,6 +114,7 @@ set(SOURCES
     MeshFlow.cpp
     MotionDenoiser.cpp
     VideoIO.cpp
+    sptwo_processor.cpp
 )
 
 # Header files
@@ -85,12 +125,36 @@ set(HEADERS
     MeshFlow.h
     MotionDenoiser.h
     VideoIO.h
+    sptwo_processor.h
 )
 
-# Include OpenCV directories
-include_directories(${OpenCV_INCLUDE_DIRS} ${VTK_INCLUDE_DIRS} ../lib/tvl1flow ../lib/clg_7/source ../lib/sms_optic_flow_2.0/spatial ../lib/sms_optic_flow_2.0/temporal)
+# Include directories
+include_directories(
+    ${OpenCV_INCLUDE_DIRS} 
+    ${VTK_INCLUDE_DIRS} 
+    ../lib/tvl1flow 
+    ../lib/clg_7/source 
+    ../lib/sms_optic_flow_2.0/spatial 
+    ../lib/sms_optic_flow_2.0/temporal
+    ../lib/sptwoIPOL/src
+    ../lib/sptwoIPOL/src/library
+    ../lib/sptwoIPOL/src/libNoiseVideo
+)
 
 # Link OpenCV libraries
 link_directories(${OpenCV_LIB_DIR})
+
+# Create executable and link libraries
 add_executable(VideoDenoiser ${SOURCES} ${HEADERS})
-target_link_libraries(VideoDenoiser ${OpenCV_LIBS}   Eigen3::Eigen Iconv::Iconv ${VTK_LIBRARIES} gflags tvl1flow clg7 sms_of) 
+target_link_libraries(VideoDenoiser 
+    ${OpenCV_LIBS}
+    Eigen3::Eigen 
+    Iconv::Iconv 
+    ${VTK_LIBRARIES} 
+    gflags 
+    tvl1flow 
+    clg7 
+    sms_of
+    sptwoIPOL
+    sptwo_processor
+)

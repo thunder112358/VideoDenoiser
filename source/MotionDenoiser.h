@@ -4,7 +4,7 @@
 #include "DenseOF.h"
 #include "time.h"
 
-#define N 4
+#define N 1
 #define Abs(x) (x>=0 ? x:(-x))
 #define COLOR 1
 #define ARROW 1
@@ -14,14 +14,14 @@
 #define __MotionDenoiser__
 class MotionDenoiser{
 
-private:
+protected:
 	int m_height;
 	int m_width;
 	int m_frameNum;
 	cv::Size m_size;
 	double m_fps;
 
-private:
+protected:
 	vector<cv::Mat> m_frames, dst;
 	vector<cv::Mat> map_X, map_Y;
 	vector<cv::Mat> temp_map_X, temp_map_Y;
@@ -36,10 +36,10 @@ private:
 	cv::Mat m_Counter_adder, m_mask_temp;
 	cv::Mat formatX, formatY;
 
-private:
+protected:
 	void MotionEstimation();
 	void AbsoluteMotion(int reference);
-	void TargetFrameBuild(int reference, cv::Mat &dst);
+	virtual void TargetFrameBuild(int reference, cv::Mat &dst);
 
 public:
 	MotionDenoiser(string name);

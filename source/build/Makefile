@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ivan/yasser/VideoDenoiser/source
+CMAKE_SOURCE_DIR = /home/ivan/yasser_bak/VideoDenoiser/source
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ivan/yasser/VideoDenoiser/source/build
+CMAKE_BINARY_DIR = /home/ivan/yasser_bak/VideoDenoiser/source/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles /home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/yasser_bak/VideoDenoiser/source/build/CMakeFiles /home/ivan/yasser_bak/VideoDenoiser/source/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/yasser/VideoDenoiser/source/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/yasser_bak/VideoDenoiser/source/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -109,19 +109,6 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-#=============================================================================
-# Target rules for targets named VideoDenoiser
-
-# Build rule for target.
-VideoDenoiser: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 VideoDenoiser
-.PHONY : VideoDenoiser
-
-# fast build rule for target.
-VideoDenoiser/fast:
-	$(MAKE) -f CMakeFiles/VideoDenoiser.dir/build.make CMakeFiles/VideoDenoiser.dir/build
-.PHONY : VideoDenoiser/fast
 
 #=============================================================================
 # Target rules for targets named sms_of
@@ -161,6 +148,58 @@ tvl1flow: cmake_check_build_system
 tvl1flow/fast:
 	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/build
 .PHONY : tvl1flow/fast
+
+#=============================================================================
+# Target rules for targets named VideoDenoiser
+
+# Build rule for target.
+VideoDenoiser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 VideoDenoiser
+.PHONY : VideoDenoiser
+
+# fast build rule for target.
+VideoDenoiser/fast:
+	$(MAKE) -f CMakeFiles/VideoDenoiser.dir/build.make CMakeFiles/VideoDenoiser.dir/build
+.PHONY : VideoDenoiser/fast
+
+#=============================================================================
+# Target rules for targets named sptwo_processor
+
+# Build rule for target.
+sptwo_processor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sptwo_processor
+.PHONY : sptwo_processor
+
+# fast build rule for target.
+sptwo_processor/fast:
+	$(MAKE) -f CMakeFiles/sptwo_processor.dir/build.make CMakeFiles/sptwo_processor.dir/build
+.PHONY : sptwo_processor/fast
+
+#=============================================================================
+# Target rules for targets named iio
+
+# Build rule for target.
+iio: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 iio
+.PHONY : iio
+
+# fast build rule for target.
+iio/fast:
+	$(MAKE) -f CMakeFiles/iio.dir/build.make CMakeFiles/iio.dir/build
+.PHONY : iio/fast
+
+#=============================================================================
+# Target rules for targets named sptwoIPOL
+
+# Build rule for target.
+sptwoIPOL: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sptwoIPOL
+.PHONY : sptwoIPOL
+
+# fast build rule for target.
+sptwoIPOL/fast:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/build
+.PHONY : sptwoIPOL/fast
 
 DenseOF.o: DenseOF.cpp.o
 
@@ -324,302 +363,518 @@ VideoIO.cpp.s:
 	$(MAKE) -f CMakeFiles/VideoDenoiser.dir/build.make CMakeFiles/VideoDenoiser.dir/VideoIO.cpp.s
 .PHONY : VideoIO.cpp.s
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.o: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.o: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.o
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.o
-
-# target to build an object file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.o:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.o
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.o
-
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.i: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.i
-
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.i
-
-# target to preprocess a source file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.i:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.i
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.i
-
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.s: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.s
-
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.s
-
-# target to generate assembly for a file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.s:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.s
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.s
-
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.o: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.c.o
-
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.o
 
 # target to build an object file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.c.o:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.c.o
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.o:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.o
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.i: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.i: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.i
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.i
 
 # target to preprocess a source file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.c.i:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.c.i
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.i:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.i
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.s: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.s: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.s
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.s
 
 # target to generate assembly for a file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.c.s:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.c.s
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.s:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.c.s
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.o: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.o: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.c.o
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.o
 
 # target to build an object file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.c.o:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.c.o
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.c.o:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.c.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.c.o
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.i: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.i: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.c.i
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.i
 
 # target to preprocess a source file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.c.i:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.c.i
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.c.i:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.c.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.c.i
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.s: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.s: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.c.s
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.s
 
 # target to generate assembly for a file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.c.s:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.c.s
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.c.s:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.c.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.c.s
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.o: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.o: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.c.o
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.o
 
 # target to build an object file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.c.o:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.c.o
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.c.o:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.c.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.c.o
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.i: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.i: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.c.i
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.i
 
 # target to preprocess a source file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.c.i:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.c.i
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.c.i:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.c.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.c.i
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.s: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.s: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.c.s
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.s
 
 # target to generate assembly for a file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.c.s:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.c.s
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.c.s:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.c.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.c.s
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.o: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.o: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.c.o
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.o
 
 # target to build an object file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.c.o:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.c.o
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.c.o:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.c.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.c.o
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.i: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.i: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.c.i
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.i
 
 # target to preprocess a source file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.c.i:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.c.i
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.c.i:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.c.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.c.i
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.s: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.s: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.c.s
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.s
 
 # target to generate assembly for a file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.c.s:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.c.s
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.c.s:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.c.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.c.s
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.o: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.o: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.c.o
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.o
 
 # target to build an object file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.c.o:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.c.o
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.c.o:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.c.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.c.o
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.i: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.i: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.c.i
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.i
 
 # target to preprocess a source file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.c.i:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.c.i
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.c.i:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.c.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.c.i
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.s: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.s: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.c.s
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.s
 
 # target to generate assembly for a file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.c.s:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.c.s
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.c.s:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.c.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.c.s
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.o: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.o: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.c.o
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.o
 
 # target to build an object file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.c.o:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.c.o
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.c.o:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.c.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.c.o
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.i: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.i: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.c.i
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.i
 
 # target to preprocess a source file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.c.i:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.c.i
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.c.i:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.c.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.c.i
 
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.s: home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.s: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.c.s
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.s
 
 # target to generate assembly for a file
-home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.c.s:
-	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.c.s
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.c.s:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.c.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.c.s
 
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.o: home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.o: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.c.o
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.o
 
 # target to build an object file
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.o:
-	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.o
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.c.o:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.c.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.c.o
 
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.i: home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.i: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.c.i
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.i
 
 # target to preprocess a source file
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.i:
-	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.i
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.c.i:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.c.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.c.i
 
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.s: home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.s: home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.c.s
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.s
 
 # target to generate assembly for a file
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.s:
-	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.s
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.c.s:
+	$(MAKE) -f CMakeFiles/clg7.dir/build.make CMakeFiles/clg7.dir/home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.c.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.c.s
 
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.o: home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.o: home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.c.o
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.o
 
 # target to build an object file
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.c.o:
-	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.c.o
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.c.o:
+	$(MAKE) -f CMakeFiles/iio.dir/build.make CMakeFiles/iio.dir/home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.c.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.c.o
 
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.i: home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.i: home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.c.i
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.i
 
 # target to preprocess a source file
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.c.i:
-	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.c.i
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.c.i:
+	$(MAKE) -f CMakeFiles/iio.dir/build.make CMakeFiles/iio.dir/home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.c.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.c.i
 
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.s: home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.s: home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.c.s
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.s
 
 # target to generate assembly for a file
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.c.s:
-	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.c.s
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.c.s:
+	$(MAKE) -f CMakeFiles/iio.dir/build.make CMakeFiles/iio.dir/home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.c.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.c.s
 
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.o: home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.o: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.cpp.o
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.o
 
 # target to build an object file
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.o:
-	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.o
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.cpp.o:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.cpp.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.cpp.o
 
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.i: home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.i: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.cpp.i
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.i
 
 # target to preprocess a source file
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.i:
-	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.i
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.cpp.i:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.cpp.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.cpp.i
 
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.s: home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.s: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.cpp.s
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.s
 
 # target to generate assembly for a file
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.s:
-	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.s
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.cpp.s:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.cpp.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.cpp.s
 
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.o: home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.o: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.cpp.o
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.o
 
 # target to build an object file
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.c.o:
-	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.c.o
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.c.o
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.cpp.o:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.cpp.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.cpp.o
 
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.i: home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.i: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.cpp.i
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.i
 
 # target to preprocess a source file
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.c.i:
-	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.c.i
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.c.i
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.cpp.i:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.cpp.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.cpp.i
 
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.s: home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.s: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.cpp.s
 
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.s
 
 # target to generate assembly for a file
-home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.c.s:
-	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.c.s
-.PHONY : home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.c.s
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.cpp.s:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.cpp.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.cpp.s
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.o: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.cpp.o
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.o
+
+# target to build an object file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.cpp.o:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.cpp.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.cpp.o
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.i: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.cpp.i
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.i
+
+# target to preprocess a source file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.cpp.i:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.cpp.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.cpp.i
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.s: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.cpp.s
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.s
+
+# target to generate assembly for a file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.cpp.s:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.cpp.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.cpp.s
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.o: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.cpp.o
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.o
+
+# target to build an object file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.cpp.o:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.cpp.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.cpp.o
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.i: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.cpp.i
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.i
+
+# target to preprocess a source file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.cpp.i:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.cpp.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.cpp.i
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.s: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.cpp.s
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.s
+
+# target to generate assembly for a file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.cpp.s:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.cpp.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.cpp.s
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.o: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.cpp.o
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.o
+
+# target to build an object file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.cpp.o:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.cpp.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.cpp.o
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.i: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.cpp.i
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.i
+
+# target to preprocess a source file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.cpp.i:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.cpp.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.cpp.i
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.s: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.cpp.s
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.s
+
+# target to generate assembly for a file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.cpp.s:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.cpp.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.cpp.s
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.o: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.cpp.o
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.o
+
+# target to build an object file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.cpp.o:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.cpp.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.cpp.o
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.i: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.cpp.i
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.i
+
+# target to preprocess a source file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.cpp.i:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.cpp.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.cpp.i
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.s: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.cpp.s
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.s
+
+# target to generate assembly for a file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.cpp.s:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.cpp.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.cpp.s
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.o: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.c.o
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.o
+
+# target to build an object file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.c.o:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.c.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.c.o
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.i: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.c.i
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.i
+
+# target to preprocess a source file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.c.i:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.c.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.c.i
+
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.s: home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.c.s
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.s
+
+# target to generate assembly for a file
+home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.c.s:
+	$(MAKE) -f CMakeFiles/sptwoIPOL.dir/build.make CMakeFiles/sptwoIPOL.dir/home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.c.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.c.s
+
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.o: home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.o
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.o
+
+# target to build an object file
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.o:
+	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.o
+
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.i: home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.i
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.i
+
+# target to preprocess a source file
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.i:
+	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.i
+
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.s: home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.s
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.s
+
+# target to generate assembly for a file
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.s:
+	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.c.s
+
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.o: home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.c.o
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.o
+
+# target to build an object file
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.c.o:
+	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.c.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.c.o
+
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.i: home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.c.i
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.i
+
+# target to preprocess a source file
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.c.i:
+	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.c.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.c.i
+
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.s: home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.c.s
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.s
+
+# target to generate assembly for a file
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.c.s:
+	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.c.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.c.s
+
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.o: home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.o
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.o
+
+# target to build an object file
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.o:
+	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.o
+
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.i: home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.i
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.i
+
+# target to preprocess a source file
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.i:
+	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.i
+
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.s: home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.s
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.s
+
+# target to generate assembly for a file
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.s:
+	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.c.s
+
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.o: home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.c.o
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.o
+
+# target to build an object file
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.c.o:
+	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.c.o
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.c.o
+
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.i: home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.c.i
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.i
+
+# target to preprocess a source file
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.c.i:
+	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.c.i
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.c.i
+
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.s: home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.c.s
+
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.s
+
+# target to generate assembly for a file
+home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.c.s:
+	$(MAKE) -f CMakeFiles/tvl1flow.dir/build.make CMakeFiles/tvl1flow.dir/home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.c.s
+.PHONY : home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.c.s
 
 main.o: main.cpp.o
 
@@ -648,6 +903,36 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/VideoDenoiser.dir/build.make CMakeFiles/VideoDenoiser.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+sptwo_processor.o: sptwo_processor.cpp.o
+
+.PHONY : sptwo_processor.o
+
+# target to build an object file
+sptwo_processor.cpp.o:
+	$(MAKE) -f CMakeFiles/VideoDenoiser.dir/build.make CMakeFiles/VideoDenoiser.dir/sptwo_processor.cpp.o
+	$(MAKE) -f CMakeFiles/sptwo_processor.dir/build.make CMakeFiles/sptwo_processor.dir/sptwo_processor.cpp.o
+.PHONY : sptwo_processor.cpp.o
+
+sptwo_processor.i: sptwo_processor.cpp.i
+
+.PHONY : sptwo_processor.i
+
+# target to preprocess a source file
+sptwo_processor.cpp.i:
+	$(MAKE) -f CMakeFiles/VideoDenoiser.dir/build.make CMakeFiles/VideoDenoiser.dir/sptwo_processor.cpp.i
+	$(MAKE) -f CMakeFiles/sptwo_processor.dir/build.make CMakeFiles/sptwo_processor.dir/sptwo_processor.cpp.i
+.PHONY : sptwo_processor.cpp.i
+
+sptwo_processor.s: sptwo_processor.cpp.s
+
+.PHONY : sptwo_processor.s
+
+# target to generate assembly for a file
+sptwo_processor.cpp.s:
+	$(MAKE) -f CMakeFiles/VideoDenoiser.dir/build.make CMakeFiles/VideoDenoiser.dir/sptwo_processor.cpp.s
+	$(MAKE) -f CMakeFiles/sptwo_processor.dir/build.make CMakeFiles/sptwo_processor.dir/sptwo_processor.cpp.s
+.PHONY : sptwo_processor.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -656,10 +941,13 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... VideoDenoiser"
 	@echo "... sms_of"
 	@echo "... clg7"
 	@echo "... tvl1flow"
+	@echo "... VideoDenoiser"
+	@echo "... sptwo_processor"
+	@echo "... iio"
+	@echo "... sptwoIPOL"
 	@echo "... DenseOF.o"
 	@echo "... DenseOF.i"
 	@echo "... DenseOF.s"
@@ -678,42 +966,69 @@ help:
 	@echo "... VideoIO.o"
 	@echo "... VideoIO.i"
 	@echo "... VideoIO.s"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.o"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.i"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.s"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.o"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.i"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of.s"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.o"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.i"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/clg_of_main.s"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.o"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.i"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/iio.s"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.o"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.i"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/mask.s"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.o"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.i"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/util.s"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.o"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.i"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/clg_7/source/zoom.s"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.o"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.i"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.s"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.o"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.i"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/tvl1flow/mask.s"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.o"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.i"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.s"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.o"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.i"
-	@echo "... home/ivan/yasser/VideoDenoiser/lib/tvl1flow/zoom.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/bicubic_interpolation.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/clg_of_main.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/iio.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/mask.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/util.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/clg_7/source/zoom.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/iio/iio.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libDenoisingVideo.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libFlow.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/libNoiseVideo/libNLPCA.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libBasic.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImage.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormatPM.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/sptwoIPOL/src/library/libImageFormats.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/bicubic_interpolation.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/mask.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/tvl1flow_lib.s"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.o"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.i"
+	@echo "... home/ivan/yasser_bak/VideoDenoiser/lib/tvl1flow/zoom.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... sptwo_processor.o"
+	@echo "... sptwo_processor.i"
+	@echo "... sptwo_processor.s"
 .PHONY : help
 
 

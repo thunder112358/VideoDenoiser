@@ -160,7 +160,7 @@ void MotionDenoiser::MotionEstimation(){
 		}
 		else
 		{
-			myDenseOF(m_frames[i - 1], m_frames[i], map_X[i - 1], map_Y[i - 1], SMS_SPATIAL);
+			myDenseOF(m_frames[i - 1], m_frames[i], map_X[i - 1], map_Y[i - 1], LIB_TVL1);
 		}
 		Get_optical_flow_img(map_X[i - 1], map_Y[i - 1], optical_flow_img[0][i - 1], optical_flow_img[1][i - 1]);
 		//cout << "Get_optical_flow_img Done" << endl;
@@ -176,9 +176,9 @@ void MotionDenoiser::Execute(){
 	//cout << "Motion Estimation Done" << endl;
 	for (int i = 0; i < m_frameNum; i++){
 		AbsoluteMotion(i);
-		//cout << "Absolute Motion Done" << endl;
+		cout << "Absolute Motion Done" << endl;
 		TargetFrameBuild(i, dst[i]);
-		//cout << "Target Frame Build Done" << endl;
+		cout << "Target Frame Build Done" << endl;
 		printf("%03d\b\b\b", i);
 		m_Counter_adder.setTo(1); 
 	}
@@ -215,7 +215,7 @@ void MotionDenoiser::AbsoluteMotion(int reference){
 
 void MotionDenoiser::TargetFrameBuild(int reference, cv::Mat &dst){
 	m_frames[reference].convertTo(m_dst_temp, CV_32FC3);
-
+	cout << "MotionDenoiser::TargetFrameBuild Start" << endl;
 	//left part
 	for (int k = reference - N, m = 0; k < reference&&m < N; k++, m++){
 		if (k >= 0){
